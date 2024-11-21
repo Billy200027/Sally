@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitudes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-btn">☰</div>
+    <div class="sidebar" id="sidebar">
+      <div class="close-btn" id="close-btn">×</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Resumen</a></li>
+          <li><a href="depositos.html">Depósitos</a></li>
+          <li><a href="solicitudes.html">Solicitudes</a></li>
+          <li><a href="prestamos.html">Préstamos</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    <h1>Sly</h1>
+    <p></p>
+  </header>
+
+    <!-- Contenido principal -->
+    <h2 class="a">Solicitudes</h2>
+    <div class="c1">
+      <form id="form-solicitudes" class="caja">
+        <label for="nombre" class="c2">¿Cuál es tu nombre?</label>
+        <input class="c2" type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+        
+        <label class="c2" for="monto">Monto del préstamo que deseas:</label>
+        <input class="c2" type="number" id="monto" name="monto" placeholder="Ej. $50,00 a $250,00" required>
+        
+        <label class="c2" for="meses">Cantidad de meses:</label>
+        <input class="c2" type="number" id="meses" name="meses" placeholder="Ej. 1 a 6 meses" required>
+        
+        <button type="submit" class="btn c2">Enviar</button>
+      </form>
+    </div>
+
+    <h2 class="a">Lista de Solicitudes</h2>
+  <div class="b">
+    <table id="tabla-solicitudes" class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Monto</th>
+          <th>Meses</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="solicitudes.js"></script>
+</body>
+</html>

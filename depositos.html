@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sly - Depósitos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-btn">☰</div>
+    <div class="sidebar" id="sidebar">
+      <div class="close-btn" id="close-btn">×</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Resumen</a></li>
+          <li><a href="depositos.html">Depósitos</a></li>
+          <li><a href="solicitudes.html">Solicitudes</a></li>
+          <li><a href="prestamos.html">Préstamos</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+    <h1>Sly</h1>
+    <p></p>
+  </header>
+
+  <main>
+    <h2 class="a">Depósitos</h2>
+    
+    <!-- Botón de filtro -->
+    <div class="filter-container">
+      <label for="filter-select">Filtrar: </label>
+      <select id="filter-select">
+        <option value="Todos">Todos</option>
+        <!-- Las opciones se generarán dinámicamente -->
+      </select>
+    </div>
+
+    <table id="tabla-depositos">
+      <thead>
+        <tr>
+          <th>Miembro</th>
+          <th>Capital</th>
+          <th>Interés</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos se llenarán automáticamente -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
