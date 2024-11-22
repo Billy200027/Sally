@@ -1,4 +1,4 @@
-// Lógica del menú lateral
+// Abrir y cerrar el menú lateral
 const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");
 const closeBtn = document.getElementById("close-btn");
@@ -10,7 +10,6 @@ menuBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   sidebar.classList.remove("active");
 });
-
 const url = 'https://script.google.com/macros/s/AKfycbxSzNyQIuhrIzpGucSpq0ne5kVeJpRDfijKPSnn4loj9sV53yybnR_LATsSZ5XOe99W/exec';
 const tbody = document.querySelector("#tabla-solicitudes tbody");
 async function cargarSolicitudes(){
