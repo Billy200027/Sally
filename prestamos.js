@@ -1,4 +1,4 @@
-const prestamosURL = "https://docs.google.com/spreadsheets/d/114PEyFvKzbdqsyqOrrh8r07utzxNLI4yRrxJ5THYCO8/gviz/tq?tqx=out:csv&sheet=prestamos";
+const prestamosURL = "https://docs.google.com/spreadsheets/d/1hK2R6G7-38p66nR0E6JXr1f7YrqKDGC7vNAb0uC5Uyg/gviz/tq?tqx=out:csv&sheet=prestamos";
 
 // Función para cargar datos desde el CSV
 async function cargarCSV(url) {

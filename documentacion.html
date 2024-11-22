@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sly - Documentación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-btn">☰</div>
+    <div class="sidebar" id="sidebar">
+      <div class="close-btn" id="close-btn">×</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Resumen</a></li>
+          <li><a href="depositos.html">Depósitos</a></li>
+          <li><a href="solicitudes.html">Solicitudes</a></li>
+          <li><a href="prestamos.html">Préstamos</a></li>
+          <li><a href="calculadora.html">Calculadora</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>Sly</h1>
+    <p></p>
+  </header>
+
+  <main>
+    <h2 class="a">Nuestra Visión y Plan</h2>
+    <section class="c1 caja">
+      <h3 class="a">Nuestro objetivo</h3>
+      <p class="b">
+        El propósito de nuestra comunidad es construir una base sólida de ahorros con un objetivo claro: reunir $12,000 en dos años. 
+        Para ello, cada miembro contribuirá con un mínimo de $5 mensuales, buscando colectivamente alcanzar o superar $100 mensuales.
+      </p>
+    </section>
+
+    <section class="c1 caja">
+      <h3 class="a">Sistema de préstamos</h3>
+      <p class="b">
+        Entre nosotros mismos podremos realizar préstamos de $50 a $250 con un interés del 3% mensual. Los plazos de pago serán de 
+        1 a 6 meses, asegurándonos de que los recursos sean reutilizados eficientemente dentro de la comunidad.
+      </p>
+    </section>
+
+    <section class="c1 caja">
+      <h3 class="a">El sueño: nuestra institución</h3>
+      <p class="b">
+        Una vez alcanzado el objetivo de $12,000, utilizaremos este fondo para fundar una institución educativa particular. La institución 
+        estará enfocada en carreras pedagógicas y será el lugar donde podamos desarrollarnos profesionalmente. 
+      </p>
+      <p class="b">Ofreceremos 7 carreras pedagógicas:</p>
+      <ul class="b">
+        <li>Licenciatura en Pedagogía de Matemáticas</li>
+        <li>Licenciatura en Pedagogía de Física</li>
+        <li>Licenciatura en Pedagogía de Historia</li>
+        <li>Licenciatura en Pedagogía de Lenguaje</li>
+        <li>Licenciatura en Pedagogía de Biología</li>
+        <li>Licenciatura en Pedagogía de Informática</li>
+        <li>Licenciatura en Pedagogía en Idiomas</li>
+      </ul>
+    </section>
+
+    <section class="c1 caja">
+      <h3 class="a">Detalles académicos</h3>
+      <p class="b">
+        Las carreras tendrán una duración de 2 años, divididos en 4 semestres. El costo será accesible, de $80 mensuales, 
+        y los miembros de la comunidad tendrán un descuento del 50% en la matrícula.
+      </p>
+    </section>
+
+    <section class="c1 caja">
+      <h3 class="a">Oportunidades de empleo</h3>
+      <p class="b">
+        Además, para aquellos miembros que no tengan un título, la institución ofrecerá puestos de trabajo como limpieza 
+        o secretaría, garantizando oportunidades para todos.
+      </p>
+    </section>
+
+    <section class="c1 caja">
+      <h3 class="a">Compromiso y unión</h3>
+      <p class="b">
+        Este proyecto no solo busca construir una institución, sino también reforzar los lazos entre los miembros, fomentando 
+        el apoyo mutuo y la inversión en nuestro futuro colectivo. ¡Juntos lo lograremos!
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Lógica del menú lateral
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

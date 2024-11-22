@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sly - Depósitos</title>
+  <title>Sly - Calculadora</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,33 +29,28 @@
   </header>
 
   <main>
-    <h2 class="a">Depósitos</h2>
-    
-    <!-- Botón de filtro -->
-    <div class="filter-container">
-      <label for="filter-select">Filtrar: </label>
-      <select id="filter-select">
-        <option value="Todos">Todos</option>
-        <!-- Las opciones se generarán dinámicamente -->
-      </select>
+    <h2 class="a">Calculadora de Préstamos</h2>
+    <div class="c1">
+      <form id="form-calculadora" class="caja">
+        <label for="monto" class="c2">Monto a prestar:</label>
+        <input class="c2" type="number" id="monto" name="monto" placeholder="Ej. $500" required>
+
+        <label for="meses" class="c2">Meses:</label>
+        <input class="c2" type="number" id="meses" name="meses" placeholder="Ej. 6 meses" required>
+
+        <button type="submit" class="btn c2">Calcular</button>
+      </form>
+      <div class="resultado caja">
+      <h4 class="a">Resultados:</h4>
+      <p class="b">Interés: <span id="interes"></span></p>
+      <p class="b">Total a pagar: <span id="total-pagar"></span></p>
+      <p class="b">Cuota mensual: <span id="cuota-mensual"></span></p>
+     </div>
     </div>
 
-    <table id="tabla-depositos">
-      <thead>
-        <tr>
-          <th>Miembro</th>
-          <th>Capital</th>
-          <th>Interés</th>
-          <th>Descripción</th>
-          <th>Fecha</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Los datos se llenarán automáticamente -->
-      </tbody>
-    </table>
+    
   </main>
 
-  <script src="script.js"></script>
+  <script src="calculadora.js"></script>
 </body>
 </html>

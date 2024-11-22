@@ -3,16 +3,24 @@ const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");
 const closeBtn = document.getElementById("close-btn");
 
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.add("active");
+});
 
-// Inicialización de solicitudes (mismo código anterior para almacenar y filtrar)
-const solicitudesKey = "solicitudes";
-const solicitudes = JSON.parse(localStorage.getItem(solicitudesKey)) || [];
-function cargarSolicitudes() {
-  const solicitudes = JSON.parse(localStorage.getItem(solicitudesKey)) || [];
-  const tbody = document.querySelector("#tabla-solicitudes tbody");
-  tbody.innerHTML = "";
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+});
 
-  solicitudes.forEach(({ nombre, monto, meses, fecha }) => {
+const url = 'https://script.google.com/macros/s/AKfycbxSzNyQIuhrIzpGucSpq0ne5kVeJpRDfijKPSnn4loj9sV53yybnR_LATsSZ5XOe99W/exec';
+const tbody = document.querySelector("#tabla-solicitudes tbody");
+async function cargarSolicitudes(){
+  
+  const request = await fetch(url);
+  const json = await request.json();
+  if (!json["success"]){
+    return
+  }
+  json["records"].forEach(([ nombre, monto, meses, fecha ]) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${nombre}</td>
@@ -21,41 +29,40 @@ function cargarSolicitudes() {
       <td>${new Date(fecha).toLocaleDateString()}</td>
     `;
     tbody.appendChild(row);
+
   });
+  console.log(json)
 
-  filtrarSolicitudes();
+}
+async function agregarSolicitud(soli){
+
+  await fetch(url, {
+    redirect:"follow",
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(soli),
+  }).then( async response =>{
+    const json = await response.json();
+    if(!json["success"]) return
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${soli.nombre}</td>
+      <td>${soli.monto}</td>
+      <td>${soli.meses}</td>
+      <td>${new Date(fecha).toLocaleDateString()}</td>
+    `;
+    tbody.appendChild(row);
+  }
+
+  )
+  .catch(error => console.error("Error:", error));
+ 
+
 }
 
-function agregarSolicitud(sol) {
-  const tbody = document.querySelector("#tabla-solicitudes tbody");
-  const row = document.createElement("tr");
-  row.innerHTML = `
-    <td>${sol["nombre"]}</td>
-    <td>${sol["monto"]}</td>
-    <td>${sol["meses"]}</td>
-    <td>${new Date( sol["fecha"]).toLocaleDateString()}</td>
-  `;
-  tbody.appendChild(row);
-}
-function guardarSolicitud(solicitud) {
-  const solicitudes = JSON.parse(localStorage.getItem(solicitudesKey)) || [];
-  solicitudes.push(solicitud);
-  localStorage.setItem(solicitudesKey, JSON.stringify(solicitudes));
-}
-
-function filtrarSolicitudes() {
-  const solicitudes = JSON.parse(localStorage.getItem(solicitudesKey)) || [];
-  const ahora = Date.now();
-  const tresDiasEnMilisegundos = 3 * 24 * 60 * 60 * 1000;
-
-  const solicitudesActualizadas = solicitudes.filter(({ fecha }) => {
-    const diferencia = ahora - new Date(fecha).getTime();
-    return diferencia <= tresDiasEnMilisegundos;
-  });
-
-  localStorage.setItem(solicitudesKey, JSON.stringify(solicitudesActualizadas));
-  cargarSolicitudes();
-}
 
 document.querySelector("#form-solicitudes").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -69,12 +76,9 @@ document.querySelector("#form-solicitudes").addEventListener("submit", (e) => {
       nombre,
       monto,
       meses,
-      fecha: new Date().toISOString(),
     };
 
-    guardarSolicitud(nuevaSolicitud);
     agregarSolicitud(nuevaSolicitud);
-    e.target.reset();
   }
 });
 

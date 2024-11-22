@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sly - Depósitos</title>
+  <title>Sly - Contacto</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,33 +29,23 @@
   </header>
 
   <main>
-    <h2 class="a">Depósitos</h2>
-    
-    <!-- Botón de filtro -->
-    <div class="filter-container">
-      <label for="filter-select">Filtrar: </label>
-      <select id="filter-select">
-        <option value="Todos">Todos</option>
-        <!-- Las opciones se generarán dinámicamente -->
-      </select>
+    <h2 class="a">Lista de Contactos</h2>
+    <div class="c1">
+      <table id="tabla-contactos" class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Celular</th>
+            <th>Rol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los contactos se llenarán automáticamente -->
+        </tbody>
+      </table>
     </div>
-
-    <table id="tabla-depositos">
-      <thead>
-        <tr>
-          <th>Miembro</th>
-          <th>Capital</th>
-          <th>Interés</th>
-          <th>Descripción</th>
-          <th>Fecha</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Los datos se llenarán automáticamente -->
-      </tbody>
-    </table>
   </main>
 
-  <script src="script.js"></script>
+  <script src="contacto.js"></script>
 </body>
 </html>
