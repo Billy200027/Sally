@@ -1,0 +1,117 @@
+/* Fuente y ajustes generales */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #48e, #189);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Sidebar */
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(24, 137, 255, 0.9);
+  color: #ecf0f1;
+  transition: 0.3s;
+  z-index: 1000;
+  padding-top: 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 15px 20px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  color: #48e;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  color: #189;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #189;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e9f5ff;
+}
